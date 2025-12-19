@@ -1,0 +1,774 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.jpg">
+  <link rel="icon" href="/img/fluid.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Li Fengke">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="⭐✰✰✰✰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能控制——递阶控制">
+<meta property="og:url" content="https://dkestxd.github.io/2025/11/18/%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6%E2%80%94%E2%80%94%E9%80%92%E9%98%B6%E6%8E%A7%E5%88%B6/index.html">
+<meta property="og:site_name" content="DKEST">
+<meta property="og:description" content="⭐✰✰✰✰">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dkestxd.github.io/img/dijie/ScreenShot_2025-11-21_172148_383.png">
+<meta property="article:published_time" content="2025-11-18T15:16:36.000Z">
+<meta property="article:modified_time" content="2025-12-19T07:52:10.281Z">
+<meta property="article:author" content="Li Fengke">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dkestxd.github.io/img/dijie/ScreenShot_2025-11-21_172148_383.png">
+  
+  
+  
+  <title>智能控制——递阶控制 - DKEST</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dkestxd.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DKEST</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="智能控制——递阶控制"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-18 23:16" pubdate>
+          2025年11月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">智能控制——递阶控制</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>⭐✰✰✰✰</p>
+<span id="more"></span>
+
+<h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><center>多移动机器人编队轨迹跟踪的递阶控制协调设计</center>
+
+<p>考虑3台异构差动驱动机器人（R1、R2、R3），需在动态环境中协同完成编队跟踪任务。 系统需满足： </p>
+<ul>
+<li><p>编队目标：形成并维持等边三角形队形（边长0.5米），同时跟踪参考轨迹。 </p>
+</li>
+<li><p>动态约束：机器人运动受非完整约束（如差动驱动，速度限制），需避免相互碰撞 及环境障碍物。</p>
+</li>
+<li><p>总体目标：最小化编队跟踪误差（位置和队形误差），并保证系统稳定性。 </p>
+<p>  请基于三级递阶控制架构设计控制系统，要求：</p>
+</li>
+</ul>
+<p>1、进行系统分解与层级设计</p>
+<ul>
+<li>明确组织级、协调级、执行级的功能划分，画出该递阶控制系统的分级系统结构图。</li>
+<li>定义各子系统的局部决策变量和目标函数。</li>
+</ul>
+<p>2、分别采用以下两种协调方法进行协调策略设计</p>
+<ul>
+<li>关联预测协调原则（直接干预法） </li>
+<li>关联平衡协调原则（目标协调法）</li>
+</ul>
+<h2 id="2-系统分解与层级设计"><a href="#2-系统分解与层级设计" class="headerlink" title="2 系统分解与层级设计"></a>2 系统分解与层级设计</h2><p>对整个系统来说，控制的目标有<strong>整体跟踪参考轨迹</strong>、<strong>保持等边三角形队形</strong>、<strong>避障</strong>三个目标，第一级为组织级，其接收参考轨迹作为设定值。</p>
+<p>组织级将任务分解为三个子任务后通过分派器分派给对应的协调器，分别对应三个目标，有<strong>全局轨迹协调器</strong>、<strong>避障协调器</strong>、<strong>队形协调器</strong>，协调器通过对各自任务的目标以及现有的控制器反馈回的值进行运算，得到控制指令下发给第三级执行级，即各种控制器。</p>
+<p>而全局轨迹协调器和环境避障的协调器共同作用于其<strong>全局位置的控制器</strong>，负责控制机器人编队的全局位置；而机器人队形协调器和机器人之间的避障都作用于机器人<strong>相对位置的控制器</strong>。</p>
+<p>整个系统可控的对象只有三个机器人的运动速度和方向以及其全局位置，而前者都由差速轮的电机决定，全局位置由另外的传感器决定（摄像头或者光电码盘）。两个被控对象之间也存在相互作用。故最终的分级系统结构图如下：</p>
+<p><img src="/img/dijie/ScreenShot_2025-11-21_172148_383.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-子系统的决策变量和目标函数"><a href="#3-子系统的决策变量和目标函数" class="headerlink" title="3 子系统的决策变量和目标函数"></a>3 子系统的决策变量和目标函数</h2><p>原题可分解为三个子问题：整体编队轨迹<strong>跟踪参考轨迹</strong>、<strong>机器人等边三角形编队</strong>、<strong>避障</strong>。对应可以分为三个子系统：<strong>总运动轨迹子系统</strong>，<strong>机器人队形保持子系统</strong>，<strong>安全保持子系统</strong></p>
+<h4 id="3-1-总运动轨迹子系统"><a href="#3-1-总运动轨迹子系统" class="headerlink" title="3.1 总运动轨迹子系统"></a>3.1 总运动轨迹子系统</h4><p>因为题目中并未提到三个机器人要以怎样的角度和顺序构成等边三角形，于是此处默认为参考轨迹指的是机器人三角形质心的轨迹。</p>
+<p><strong>决策变量</strong>：三个机器人组成的三角形质心的坐标$$p_c=[x_c,y_c]$$ ，质心的速度$$v_c=[|v_c|,\theta_c]$$ </p>
+<p><strong>目标函数</strong>：最小化实际轨迹与参考轨迹之间的误差，其中既有此时刻绝对位置与参考轨迹上位置的误差，也有此时刻运动方向与参考轨迹上此点的切线方向的误差。</p>
+
+$$
+J_1=||p_c-p_{ref}||^2+\lambda_1||\theta_c-\theta_{ref}||^2
+$$
+
+<p>假设初始状态都是0，速度与坐标有$$p_c(t)=\int^t_0v_c(t)dt$$ 的关系。</p>
+<h4 id="3-2-机器人队形保持子系统"><a href="#3-2-机器人队形保持子系统" class="headerlink" title="3.2 机器人队形保持子系统"></a>3.2 机器人队形保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标$$p_1,p_2,p_3$$ ，其中$$p_i=[x_i,y_i]$$ ；三个机器人各自的速度$$v_1,v_2,v_3$$ ，其中$$v_i=[|v_i|,\theta_i]$$ 。</p>
+<p><strong>目标函数</strong>：使实际机器人之间的相对位姿尽可能接近等边三角形并且保持。接近三角形可用两两之间的相对距离为<strong>d&#x3D;0.5m</strong>，保持三角形可用两两机器人之间<strong>在位置连线上的分速度之差为0</strong> 。</p>
+
+$$
+J_2=\sum_{i,j}(||p_i-p_j||^2-d^2)^2+\lambda_2\sum_{i,j}E^2(v_i,v_j)
+$$
+
+<p>其中$$E(v_i,v_j)$$ 为i，j两个机器人在其连线方向上的速度分量之差。假设初始状态都是0，速度与坐标有$$p_i(t)=\int^t_0v_i(t)dt$$ 的关系。</p>
+<h4 id="3-3-安全保持子系统"><a href="#3-3-安全保持子系统" class="headerlink" title="3.3 安全保持子系统"></a>3.3 安全保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标$$p_1,p_2,p_3$$ ，其中$$p_i=[x_i,y_i]$$ ；三个机器人各自的速度$$v_1,v_2,v_3$$ ，其中$$v_i=[|v_i|,\theta_i]$$ 。</p>
+<p>对这个系统来说，用其监测整个系统的硬约束比建立一个目标函数的效果更好，如果建立目标函数，定义为三个机器人的位置坐标与已知障碍点的位置坐标之间的距离以及机器人之间的距离的加权和，并期望其越大越好，这可能会产生冲突，比如说已经有一个机器人与一个障碍物撞上了，但是整体上距离之和依然很大，没有起到保持安全的作用，或者决策函数用乘法，那么其距离关系更难以预测了，不如用硬约束来约束他们。</p>
+<p><strong>速度上限约束</strong>：$$|v_i|\leq v_{max}$$ </p>
+<p><strong>差动驱动约束</strong>：
+$$\dot{x}_i = v_i\cos\theta_i,\quad
+ \dot{y}_i = v_i\sin\theta_i$$
+</p>
+<p><strong>环境避障约束</strong>：$$||p_i-o_j||\geq d_{safe1}$$ </p>
+<p><strong>机器人之间不碰撞约束</strong>：$$||p_i-p_j||\geq d_{safe2}$$ </p>
+<p><strong>系统关联</strong>：机器人组成的三角形的质心的坐标与三个机器人坐标之间的关系为$$p_c=\frac{1}{3}(p_1+p_2+p_3)$$ ，机器人组成的三角形的质心的速度与三个机器人的速度之间的关系为$$v_c=\frac{1}{3}(v_1+v_2+v_3)$$ (矢量和)</p>
+<p><strong>总体目标</strong>：整体误差最小，即 J1 与 J2 的加权和最小</p>
+
+$$
+min J=J_1+\lambda J_2=(||p_c-p_{ref}||^2+\lambda_1||\theta_c-\theta_{ref}||^2)+\lambda(\sum_{i,j}(||p_i-p_j||^2-d^2)^2+\lambda_2\sum_{i,j}E^2(v_i,v_j))
+$$
+
+<p>其中的 J 是每个时刻的误差值，对整体系统的期望是其在整个过程中的所有累积误差尽量小，尽量接近0，即：</p>
+
+$$
+min J_{all}=\int^{t_0}_0J(t)dt
+$$
+
+
+
+<p><strong>协调参数</strong>：协调器需要处理关联变量$$p_c$$ 和$$p_i$$ ，$$v_c$$ 和$$v_i$$ </p>
+<p><strong>约束</strong>：$$|v_i|\leq v_{max}$$ 		
+$$\dot{x}_i = v_i\cos\theta_i,\quad
+ \dot{y}_i = v_i\sin\theta_i$$
+		$$||p_i-o_j||\geq d_{safe1}$$ 		$$||p_i-p_j||\geq d_{safe2}$$ </p>
+<h2 id="4-协调策略设计"><a href="#4-协调策略设计" class="headerlink" title="4 协调策略设计"></a>4 协调策略设计</h2><p>我们计算总体目标误差时，是将三个机器人各自在整个过程中的速度函数$$v_i(t)$$ 代入 $$J_{all}$$ 公式中运算的，即对每个时刻的误差结果积分后的总结果进行评估。具体优化$$v_i(t)$$ 时，即优化其在某些时刻的值时，会用此时刻的总体误差最小来作为目标进行优化。</p>
+<h4 id="4-1-关联预测协调原则（直接干预法）"><a href="#4-1-关联预测协调原则（直接干预法）" class="headerlink" title="4.1 关联预测协调原则（直接干预法）"></a>4.1 关联预测协调原则（直接干预法）</h4><ol>
+<li><strong>协调级预测关联</strong>：预测三个机器人整个运动过程中的速度函数为$$v_i^*$$ ，其运动轨迹为$$p_i^*(t)=\int^t_0v_i^*(t)dt$$ ；构成的三角形质心的速度函数为$$v_c^*=\frac{1}{3}(v_1^*+v_2^*+v_3^*)$$ ，轨迹函数为$$p_c^*=\frac{1}{3}(p_1^*+p_2^*+p_3^*)$$ </li>
+<li><strong>子系统决策</strong>：在约束$$v_i=v_i^*$$ 下，优化内部参数使得$$\int^{t_0}_0J_1dt$$ 最大，在约束$$v_c=v_c^*$$ 下，优化内部参数使得$$\int^{t_0}_0J_2dt$$ 最大</li>
+<li><strong>协调级修正关联</strong>：检查此时的总误差$$J_{all}$$ ，看是否达到预期，是否还能够下降；若还能下降，就微调$$v_i$$ ，注意要满足硬约束。</li>
+<li><strong>迭代</strong>：重复步骤1-3，直到总误差不能再降。</li>
+</ol>
+<p>其中每一次迭代的解都是可行解，但是迭代过程太慢了，需要内部一次次根据局部误差最小进行优化。</p>
+<h4 id="4-2-关联平衡协调原则（目标协调法）"><a href="#4-2-关联平衡协调原则（目标协调法）" class="headerlink" title="4.2 关联平衡协调原则（目标协调法）"></a>4.2 关联平衡协调原则（目标协调法）</h4><ol>
+<li><strong>协调器引入干预变量</strong>：$$p_{\beta}$$ <ul>
+<li>总运动轨迹子系统新目标为$$J'_1=J_1+||p_c-p_{\beta}||^2$$ </li>
+<li>机器人队形保持子系统新目标为$$J'_2=J_2+\sum_{i=1}^3(||p_i-p_{\beta}||^2)$$ </li>
+</ul>
+</li>
+<li><strong>子系统决策</strong>：忽略约束的情况下，分别独立求解$$min J'_1$$ ，$$minJ'_2$$ ，得到最优$$p_c^*，p_i^*$$ </li>
+<li><strong>协调级修正子目标(平衡关联)</strong>：检查关联是否平衡：求$$e=||p_c^*-\frac{1}{3}(p_1^*+p_2^*+p_3^*)||^2$$ ，观察其是否为0，若不是0，调整$$p_{\beta}$$ 使得e尽量接近0</li>
+<li><strong>迭代</strong>：重复步骤1-3，直到e趋于0</li>
+</ol>
+<p>子问题每次没有关联约束，都有解；但是迭代过程中的解都不满足关联约束说明其都不能作为真实解，只能离线规划，不能在线运行。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/matlab/" class="category-chain-item">matlab</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>智能控制——递阶控制</div>
+      <div>https://dkestxd.github.io/2025/11/18/智能控制——递阶控制/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Li Fengke</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月18日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/01/%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6%E2%80%94%E2%80%94%E4%B8%93%E5%AE%B6%E6%8E%A7%E5%88%B6/" title="智能控制——专家控制">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">智能控制——专家控制</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/06/27/%E5%85%B3%E4%BA%8Eazumanga%E4%B8%AD%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E8%A7%92%E8%89%B2%E6%8E%92%E5%90%8D/" title="关于azumanga中最喜欢的角色排名">
+                        <span class="hidden-mobile">关于azumanga中最喜欢的角色排名</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

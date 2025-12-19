@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.jpg">
+  <link rel="icon" href="/img/fluid.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Li Fengke">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="⭐⭐⭐✰✰">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能控制——专家控制">
+<meta property="og:url" content="https://dkestxd.github.io/2025/12/01/%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6%E2%80%94%E2%80%94%E4%B8%93%E5%AE%B6%E6%8E%A7%E5%88%B6/index.html">
+<meta property="og:site_name" content="DKEST">
+<meta property="og:description" content="⭐⭐⭐✰✰">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_182014_561.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764670067832.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_181927_860.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/image-20251202182241252.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_184125_404.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_185027_134.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_190345_338.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_190404_654.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764676163550.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764676424347.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_200315_972.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764677480012.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_200700_608.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764677743274.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_203415_838.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764678102021.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764679750510.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764679853532.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764679944865.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764680206333.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764680270427.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/zhuanjia/stitching-collage-1764680294010.jpg">
+<meta property="article:published_time" content="2025-12-01T15:16:36.000Z">
+<meta property="article:modified_time" content="2025-12-19T07:42:20.457Z">
+<meta property="article:author" content="Li Fengke">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dkestxd.github.io/img/zhuanjia/ScreenShot_2025-12-02_182014_561.png">
+  
+  
+  
+  <title>智能控制——专家控制 - DKEST</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dkestxd.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DKEST</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="智能控制——专家控制"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-01 23:16" pubdate>
+          2025年12月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">智能控制——专家控制</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>⭐⭐⭐✰✰</p>
+<span id="more"></span>
+
+<h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>考虑一个<strong>无人水面艇（USV）<strong>航向跟踪控制系统。无人艇的</strong>非线性</strong>动力学模型如下：<br>$$<br>T\ddot{\psi}+KH(\dot{\psi})&#x3D;K\delta+d(t)<br>$$<br>其中：</p>
+<ul>
+<li><strong>状态变量</strong>$\psi$为航向角(单位：弧度)；$r&#x3D;\dot{\psi}$为转艏角速度（单位：弧度&#x2F;秒）</li>
+<li><strong>控制输入</strong>$\delta$为舵角(单位：弧度)，也是控制器的输出，通常受限，$|\delta|\leq\delta_{max}$</li>
+<li><strong>系统参数𝑇</strong>为船舶的追随性指数，体现惯性；<strong>𝐾</strong>为船舶的旋回性指数；$H(\dot{\psi})&#x3D;\alpha\dot{\psi}+\beta\dot{\psi}^3$ 为一个关键的<strong>非线性函数</strong>，用于描述船舶在不同转速下的转向特性，参数𝛼、𝛽决定了非线性程度。</li>
+<li><strong>外部扰动</strong>$d(t)&#x3D;A_dsin(\omega_dt)+n(t)$，代表综合环境扰动（如风、浪、流），其中 𝑛(t)为随 机白噪声。</li>
+<li><strong>系统参数</strong>：输入舵角$\delta$受限为$|\delta|\leq0.5rad$，$d(t)&#x3D;0.1sin(0.1t)$模拟持续的环境扰动 （如风浪流）。系统参数为$T&#x3D;2.0s，K&#x3D;0.8s^{-1}、\alpha&#x3D;1.0、\beta&#x3D;0.5$</li>
+<li><strong>扰动参数</strong>：$A_d&#x3D;0.1，\omega_d&#x3D;0.1$，$n(t)$为均值为0，方差为0.01的白噪声</li>
+<li><strong>初始条件</strong>：$\psi(0)&#x3D;0.1rad，r(0)&#x3D;0rad&#x2F;s$</li>
+<li><strong>控制目标</strong>：设计控制器，通过调节舵角$\delta$，使船舶航向$\psi$能够跟踪时变的参考航向$\psi_{ref}(t)$（如阶跃信号、斜坡信号或正弦信号）</li>
+</ul>
+<p>接下来：</p>
+<ol>
+<li>进行专家控制器设计：基于误差 $𝑒&#x3D;𝜓_{𝑟𝑒𝑓}−𝜓$和误差变化率 $𝑒𝑐&#x3D;𝑒̇$，设计一个直接映射到舵角𝛿的规则库。</li>
+<li>进行专家PID控制器设计：基于(1)中相同的𝑒和𝑒𝑐，设计一个用于动态调整 PID 参数(𝐾𝑝,𝐾𝑖,𝐾𝑑)的规则库，再由标准PID算法计算𝛿 </li>
+<li>仿真与对比分析：在MATLAB&#x2F;Simulink中搭建上述船舶模型，在相同条件下仿真实现上述两个控制器，并从超调量、调节时间、稳态误差、控制输入平滑性和鲁棒性（参数摄动下的性能）五个维度进行定量对比</li>
+</ol>
+<h2 id="2-问题分析与建模"><a href="#2-问题分析与建模" class="headerlink" title="2 问题分析与建模"></a>2 问题分析与建模</h2><p>本题目给出了一个非线性模型，其中控制器输出是δ，被控对象是$ψ$，目的是用专家控制设置控制器和PID控制器来实现$ψ$跟踪$ψ_{ref}$</p>
+<p>首先对模型进行分析：<br>$$<br>T\ddot{\psi}+KH(\dot{\psi})&#x3D;K\delta+d(t)<br>$$<br>从控制器输出开始，先乘上增益K再加上干扰d(t)得到右边式子，然后需要由此得到$\ddot{\psi}$，再经过两次积分得到$\psi$，因为：<br>$$<br>\ddot{\psi}&#x3D;\frac{1}{T}(K\delta+d(t)-KH(\dot{\psi}))<br>$$<br>可以画出：</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_182014_561.png" srcset="/img/loading.gif" lazyload></p>
+<p>其中$n(t)$用的Random Number模块作为白噪声；$d(t)$是正弦信号扰动，$\omega_d&#x3D;0.1，A_d&#x3D;0.1$；中间的函数模块即$H(\dot{\psi})$；$\psi_0$为初始值0.1rad。前三者具体参数配置如下图。</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764670067832.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>得到了控制对象的基本模型，就可以把所需要的$e，ec$表示出来然后输入进控制器进行控制了。</p>
+<h2 id="3-控制器规则库设计"><a href="#3-控制器规则库设计" class="headerlink" title="3 控制器规则库设计"></a>3 控制器规则库设计</h2><h3 id="3-1-专家控制器"><a href="#3-1-专家控制器" class="headerlink" title="3.1 专家控制器"></a>3.1 专家控制器</h3><p>专家控制器输入为$e，ec$，输出为δ，用S-Function模块来写，可以得到如图所示的结构。</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_181927_860.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/zhuanjia/image-20251202182241252.png" srcset="/img/loading.gif" lazyload></p>
+<p>由S-Function的原理图，我们首先可以写出其主函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[sys,x0,str,ts,simStateCompliance]</span>=<span class="hljs-title">expert_control</span><span class="hljs-params">(t,x,u,flag)</span></span><br><span class="hljs-keyword">switch</span> flag<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span><span class="hljs-comment">%初始化</span><br>        [sys,x0,str,ts,simStateCompliance]=mdlInitializeSizes;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span><span class="hljs-comment">%计算导数</span><br>    	sys=mdlDerivatives(t,x,u);<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span><span class="hljs-comment">%更新状态</span><br>        sys=mdlUpdate(t,x,u);<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span><span class="hljs-comment">%计算输出</span><br>        sys=mdlOutputs(t,x,u);<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span><span class="hljs-comment">%计算下一个采样时间</span><br>        sys=mdlGetTimeOfNextVarHit(t,x,u);<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">9</span><span class="hljs-comment">%仿真结束</span><br>        sys=mdlTerminate(t,x,u);<br>    <span class="hljs-keyword">otherwise</span><br>        DAStudio.error(<span class="hljs-string">&#x27;Simulink:blocks:unhandledFlag&#x27;</span>, num2str(flag));<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+
+<p>然后是初始化函数配置相关参数，本控制器没有内部状态变量，输入变量2个，输出变量1个。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[sys,x0,str,ts,simStateCompliance]</span>=<span class="hljs-title">mdlInitializeSizes</span></span><br>sizes = simsizes;<br>sizes.NumContStates  = <span class="hljs-number">0</span>;<span class="hljs-comment">%连续状态数</span><br>sizes.NumDiscStates  = <span class="hljs-number">0</span>;<span class="hljs-comment">%离散状态数</span><br>sizes.NumOutputs     = <span class="hljs-number">1</span>;<span class="hljs-comment">%输出量个数</span><br>sizes.NumInputs      = <span class="hljs-number">2</span>;<span class="hljs-comment">%输入量个数</span><br>sizes.DirFeedthrough = <span class="hljs-number">1</span>;<span class="hljs-comment">%是否存在直接馈通。1：存在；0：不存在，缺省为 1 </span><br>sizes.NumSampleTimes = <span class="hljs-number">1</span>;<span class="hljs-comment">%采样时间</span><br><br>sys = simsizes(sizes);<br>x0  = [];<span class="hljs-comment">% 设置初始状态</span><br>str = [];<span class="hljs-comment">% 保留变量置空</span><br>ts  = [<span class="hljs-number">0</span> <span class="hljs-number">0</span>]; <span class="hljs-comment">% 连续系统</span><br>simStateCompliance = <span class="hljs-string">&#x27;UnknownSimState&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>而对于计算导数、更新状态、计算下一个采样时间、仿真结束四个子函数在此处都用不到，给予默认配置。</p>
+<p>而我们的规则库主要体现在计算输出子函数mdlOutputs上</p>
+<p>先创建若干条规则：</p>
+<ul>
+<li>饱和控制：偏差很大时，打满舵，以求最快速度纠正。 </li>
+<li>增强控制：偏差中等且仍在变大，用中等舵角抑制其增长。  </li>
+<li>保守控制：偏差中等但已在缩小，用小舵角柔和纠正，防止超调。</li>
+<li>精细控制：接近目标，启用类似PID的精细控制，平滑稳定。</li>
+<li>微调控制：默认情况，施加一个微小恒定的纠正力。</li>
+<li>输出限制：$|\delta|\leq0.5rad$</li>
+</ul>
+<p>再对应转化为代码语言，按照图上的顺序，两个输入中u(1)是e，u(2)是ec</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sys</span>=<span class="hljs-title">mdlOutputs</span><span class="hljs-params">(t,x,u)</span></span><br>e=u(<span class="hljs-number">1</span>)<br>ec=u(<span class="hljs-number">2</span>);<br>delta=<span class="hljs-number">0</span>;<span class="hljs-comment">%初始输出为0</span><br><span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(e)&gt;<span class="hljs-number">0.5</span><span class="hljs-comment">%饱和控制，偏差大时满舵</span><br>    delta=<span class="hljs-number">0.5</span>*<span class="hljs-built_in">sign</span>(e);<br><span class="hljs-keyword">elseif</span> <span class="hljs-built_in">abs</span>(e)&gt;<span class="hljs-number">0.2</span>&amp;&amp;ec*e&gt;<span class="hljs-number">0</span><span class="hljs-comment">%增强控制，偏差中等但是在变大，中等舵角</span><br>    delta=<span class="hljs-number">0.3</span>*<span class="hljs-built_in">sign</span>(e);<br><span class="hljs-keyword">elseif</span> <span class="hljs-built_in">abs</span>(e)&gt;<span class="hljs-number">0.2</span>&amp;&amp;ec*e&lt;<span class="hljs-number">0</span><span class="hljs-comment">%保守控制，偏差中等但是在变小，小舵角</span><br>    delta=<span class="hljs-number">0.15</span>*<span class="hljs-built_in">sign</span>(e);<br><span class="hljs-keyword">elseif</span> <span class="hljs-built_in">abs</span>(e)&gt;<span class="hljs-number">0.05</span><span class="hljs-comment">%精选控制，接近目标微小舵角</span><br>    delta=<span class="hljs-number">0.05</span>*e+<span class="hljs-number">0.02</span>*ec; <br><span class="hljs-keyword">else</span><br>    delta=<span class="hljs-number">0.01</span>*e;<span class="hljs-comment">%默认情况，给一个微小恒定的力</span><br><span class="hljs-keyword">end</span><br><br>delta=<span class="hljs-built_in">min</span>(<span class="hljs-built_in">max</span>(delta,<span class="hljs-number">-0.5</span>),<span class="hljs-number">0.5</span>);<span class="hljs-comment">%输出限制</span><br>sys=delta;<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-专家PID控制器"><a href="#3-2-专家PID控制器" class="headerlink" title="3.2 专家PID控制器"></a>3.2 专家PID控制器</h3><p><img src="/img/zhuanjia/ScreenShot_2025-12-02_184125_404.png" srcset="/img/loading.gif" lazyload></p>
+<p>结构与专家控制器一致，只是控制器的S-Function的规则库不一样。</p>
+<p>S-Function大致结构和专家控制器一致，初始化参数设计不同，其规则库体现在状态更新子函数mdlUpdate上</p>
+<p>初始化函数：此时定义三个内部状态：累积e积分、上次采样的e、得到的舵角(便于输出)</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[sys,x0,str,ts,simStateCompliance]</span>=<span class="hljs-title">mdlInitializeSizes</span></span><br>sizes = simsizes;<br>sizes.NumContStates  = <span class="hljs-number">3</span>;<span class="hljs-comment">%连续状态数</span><br>sizes.NumDiscStates  = <span class="hljs-number">0</span>;<span class="hljs-comment">%离散状态数</span><br>sizes.NumOutputs     = <span class="hljs-number">1</span>;<span class="hljs-comment">%输出量个数</span><br>sizes.NumInputs      = <span class="hljs-number">2</span>;<span class="hljs-comment">%输入量个数</span><br>sizes.DirFeedthrough = <span class="hljs-number">1</span>;<span class="hljs-comment">%是否存在直接馈通。1：存在；0：不存在，缺省为 1 </span><br>sizes.NumSampleTimes = <span class="hljs-number">1</span>;<span class="hljs-comment">%采样时间</span><br><br>sys = simsizes(sizes);<br>x0  = [];<span class="hljs-comment">% 设置初始状态</span><br>str = [];<span class="hljs-comment">% 保留变量置空</span><br>ts  = [<span class="hljs-number">0</span> <span class="hljs-number">0</span>]; <span class="hljs-comment">% 连续系统</span><br>simStateCompliance = <span class="hljs-string">&#x27;UnknownSimState&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_185027_134.png" srcset="/img/loading.gif" lazyload></p>
+<p>上图为数字PID控制算法，我们所控的Kp，Ki，Kd参数直接就是每个环节前面的系数。</p>
+<p>首先设定一组基础PID值，要求能够实现控制，无其他性能指标要求。令$K_P&#x3D;1.2,K_I&#x3D;0.3,K_D&#x3D;0.4$，模拟运行一下：</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_190345_338.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_190404_654.png" srcset="/img/loading.gif" lazyload></p>
+<p>可见能够实现控制，因此这组默认值是合理的。并由此为基础编写规则库</p>
+<p>有若干条规则：</p>
+<ol>
+<li>抗饱和：偏差极大，切换为Bang-Bang控制，也就是直接开到满舵，绕过PID。</li>
+<li>加速响应：误差在扩大，增强P和D以抑制偏差增长，削弱 I 防积分饱和。</li>
+<li>抑制超调：误差在缩小，减弱控制作用，使系统平稳接近目标。</li>
+<li>消除静差：接近目标，增强积分作用以消除稳态误差，减弱P和D防振荡。</li>
+<li>抗积分饱和：给积分定上下限，同时偏差较大时清零积分。</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sys</span> = <span class="hljs-title">mdlUpdate</span><span class="hljs-params">(t,x,u)</span></span><br>Ts=<span class="hljs-number">0.01</span>;<br>e=u(<span class="hljs-number">1</span>);<br>ec=u(<span class="hljs-number">2</span>);<br><br>integral_e=x(<span class="hljs-number">1</span>);<span class="hljs-comment">%累积积分</span><br>pre_e=x(<span class="hljs-number">2</span>);<span class="hljs-comment">%上次的e</span><br>delta=x(<span class="hljs-number">3</span>);<span class="hljs-comment">%计算得到的舵角</span><br><span class="hljs-comment">%基础值</span><br>Kp_base=<span class="hljs-number">1.2</span>;<br>Ki_base=<span class="hljs-number">0.3</span>;<br>Kd_base=<span class="hljs-number">0.4</span>;<br><span class="hljs-comment">%默认</span><br>Kp=Kp_base;<br>Ki=Ki_base;<br>Kd=Kd_base;<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(e) &gt; <span class="hljs-number">0.5</span><span class="hljs-comment">%抗饱和，偏差大直接打满舵，清空积分</span><br>    delta=<span class="hljs-number">0.5</span>*<span class="hljs-built_in">sign</span>(e);<br>    integral_e=<span class="hljs-number">0</span>;              <span class="hljs-comment">% 防止积分爆炸</span><br>    sys=[integral_e; pre_e; delta];<br>    <span class="hljs-keyword">return</span>;<br><span class="hljs-keyword">end</span><br><span class="hljs-keyword">if</span> e*ec &gt; <span class="hljs-number">0</span><span class="hljs-comment">%加速响应，当误差在扩大，增强PD，抑制I</span><br>    Kp=Kp_base*<span class="hljs-number">1.6</span>;<br>    Kd=Kd_base*<span class="hljs-number">1.6</span>;<br>    Ki=Ki_base*<span class="hljs-number">0.5</span>;<br><span class="hljs-keyword">elseif</span> e*ec&lt;<span class="hljs-number">0</span><span class="hljs-comment">%抑制超调，当误差减小，PID都减小</span><br>    Kp=Kp_base*<span class="hljs-number">0.7</span>;<br>    Kd=Kd_base*<span class="hljs-number">0.7</span>;<br>    Ki=Ki_base*<span class="hljs-number">0.7</span>;<br><span class="hljs-keyword">elseif</span> <span class="hljs-built_in">abs</span>(e)&lt;<span class="hljs-number">0.1</span><span class="hljs-comment">%消除静差，增强I，抑制PD</span><br>    Ki=Ki_base*<span class="hljs-number">2.0</span>;<br>    Kp=Kp_base*<span class="hljs-number">0.5</span>;<br>    Kd=Kd_base*<span class="hljs-number">0.5</span>;<br><span class="hljs-keyword">end</span><br><span class="hljs-comment">%更新积分</span><br>integral_e=integral_e+e*Ts;<br>integral_e=<span class="hljs-built_in">max</span>(<span class="hljs-built_in">min</span>(integral_e,<span class="hljs-number">1</span>),<span class="hljs-number">-1</span>);<span class="hljs-comment">%抗积分饱和</span><br><span class="hljs-comment">%求微分</span><br>derivative_e=(e-pre_e)/Ts;<br><span class="hljs-comment">%代入PID算法求δ</span><br>delta=Kp*e+Ki*integral_e+Kd*derivative_e<br>delta=<span class="hljs-built_in">max</span>(<span class="hljs-built_in">min</span>(delta,<span class="hljs-number">0.5</span>),<span class="hljs-number">-0.5</span>);<br>sys=[integral_e;e;delta];<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sys</span> = <span class="hljs-title">mdlOutputs</span><span class="hljs-params">(t,x,u)</span>%输出函数</span><br>sys = x(<span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-模型对比"><a href="#4-模型对比" class="headerlink" title="4  模型对比"></a>4  模型对比</h2><p>扰动量初始值等其他参数都相等的情况下，观察控制器控制$ψ$跟踪$ψ_{ref}$d</p>
+<h3 id="4-1-阶跃输入"><a href="#4-1-阶跃输入" class="headerlink" title="4.1 阶跃输入"></a>4.1 阶跃输入</h3><p>让$ψ_{ref}$为阶跃输入，<strong>从0.5阶跃到1</strong></p>
+<p><img src="/img/zhuanjia/stitching-collage-1764676163550.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>上图左侧为<strong>专家控制</strong>，右侧为<strong>专家PID控制</strong>；可以看到当$ψ_{ref}$较小时，控制器受扰动影响较大，输出会产生震荡，并且通过对比，专家PID控制的抗干扰能力比专家控制强，专家控制已经明显受正弦干扰影响而产生周期震荡了。</p>
+<p>让$ψ_{ref}$为阶跃输入，<strong>从10阶跃到15</strong> 。同时为了测试鲁棒性在扰动中新增一个干扰变量。由于δ有限幅，令扰动量为0.2</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764676424347.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>专家控制响应为：（左侧为阶跃响应ψ，右侧为控制输入δ）</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_200315_972.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/zhuanjia/stitching-collage-1764677480012.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>专家PID控制响应为：（左侧为阶跃响应ψ，右侧为控制输入δ）</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_200700_608.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/zhuanjia/stitching-collage-1764677743274.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>传统PID控制响应为(参数用专家PID的基础参数$K_P&#x3D;1.2,K_I&#x3D;0.3,K_D&#x3D;0.4$并且设置抗积分饱和)：左边ψ右边δ</p>
+<p><img src="/img/zhuanjia/ScreenShot_2025-12-02_203415_838.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/zhuanjia/stitching-collage-1764678102021.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>由图可得出超调量、调节时间、稳态误差、控制输入的平滑性和鲁棒性</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>超调σ</th>
+<th>调节时间ts(2%)</th>
+<th>稳态误差</th>
+<th>δ的平滑性</th>
+<th>δ的鲁棒性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>专家控制器</td>
+<td>2.02%(几乎无超调)</td>
+<td>20.882s</td>
+<td>0(但是一直在振荡)</td>
+<td>δ非常不平滑，各种跳变产生了梳子形状的图象</td>
+<td>当给另外的干扰时，δ为适应随之变化，但是最终的响应的均值略微变大，出现了稳态误差，鲁棒性较差</td>
+</tr>
+<tr>
+<td>专家PID控制</td>
+<td>0.99%(几乎无超调)</td>
+<td>15.392s</td>
+<td>0(几乎不振荡，较为稳定)</td>
+<td>δ虽然也存在锯齿，但是相比于专家控制较为平滑</td>
+<td>当给另外的干扰时，δ也随之变化，最终响应不变，没有稳态误差，但是比起扰动前出现了非常轻微的振荡，鲁棒性较好</td>
+</tr>
+<tr>
+<td>传统PID控制</td>
+<td>1.79%(几乎无超调)</td>
+<td>15.196</td>
+<td>0(微弱振荡，比专家PID强烈一点，但是整体上还是非常稳定)</td>
+<td>δ的平滑性介于专家控制和专家PID控制之间，存在一些特别剧烈变化的锯齿</td>
+<td>当给另外的干扰时，δ也随之变化，最终响应不变，没有稳态误差，而且扰动前后的振荡情况几乎完全一致，鲁棒性极强</td>
+</tr>
+</tbody></table>
+<p>总结得出：</p>
+<ul>
+<li>三种控制方法都实现了几乎无超调的控制指标，并且稳态误差都为0 </li>
+<li>调节时间专家PID比专家控制更短，说明其调节速度更快</li>
+<li>最终专家控制一直在振荡，而专家PID几乎不震荡，说明专家PID调节策略更加稳定，效果更好</li>
+<li>对专家控制来说，其规则库直接令控制输入δ阶跃变化，这导致其平滑性远不如专家PID控制</li>
+<li>参数变化时，专家控制最后甚至出现了稳态误差，其鲁棒性也不如专家PID控制</li>
+</ul>
+<p>由此可以看出，<strong>专家PID控制整体上是优于专家控制的</strong>；而专家PID控制在某些方面如控制输入δ平滑性上优于传统PID，而传统PID在鲁棒性上优于专家PID控制</p>
+<h3 id="4-2-斜坡输入"><a href="#4-2-斜坡输入" class="headerlink" title="4.2 斜坡输入"></a>4.2 斜坡输入</h3><p>定义$\psi_{ref}$为初始值0.1，斜率0.05的斜坡输入，观察两种控制器的响应。</p>
+<p>专家控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764679750510.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>专家PID控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764679853532.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>传统PID控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764679944865.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>专家PID控制明显振荡更小，效果更好，整体上比专家控制更强。</p>
+<h3 id="4-3-正弦输入"><a href="#4-3-正弦输入" class="headerlink" title="4.3 正弦输入"></a>4.3 正弦输入</h3><p>定义$\psi_{ref}$为偏置10，振幅0.5，角频率0.1的正弦输入，观察两种控制器的响应</p>
+<p>专家控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764680206333.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>专家PID控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764680270427.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>传统PID控制器响应：</p>
+<p><img src="/img/zhuanjia/stitching-collage-1764680294010.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>可见专业PID控制对正弦输入的跟踪效果也比专业控制强，且δ的平滑程度、鲁棒性都更好，专业PID控制更强。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/matlab/" class="category-chain-item">matlab</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>智能控制——专家控制</div>
+      <div>https://dkestxd.github.io/2025/12/01/智能控制——专家控制/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Li Fengke</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/02/%E8%BD%A8%E8%BF%B9%E8%AF%86%E5%88%AB%E4%B8%8E%E5%88%86%E7%B1%BB%E6%8E%A7%E5%88%B6%E5%B0%8F%E8%BD%A6%E2%80%94%E2%80%94%E2%80%9C%E9%AD%94%E6%9D%96%E2%80%9D/" title="轨迹识别与分类控制小车——“魔杖”">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">轨迹识别与分类控制小车——“魔杖”</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/11/18/%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6%E2%80%94%E2%80%94%E9%80%92%E9%98%B6%E6%8E%A7%E5%88%B6/" title="智能控制——递阶控制">
+                        <span class="hidden-mobile">智能控制——递阶控制</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

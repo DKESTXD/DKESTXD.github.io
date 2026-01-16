@@ -26,16 +26,17 @@
 <meta property="og:site_name" content="DKEST">
 <meta property="og:description" content="有建模">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2025-12-20_145534_886.png">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2026-01-03_175152_444.png">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2025-12-23_130519_497.png">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2025-12-23_131145_289.png">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2025-12-23_131422_797.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2025-12-20_145534_886.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2026-01-03_175152_444.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2025-12-23_130519_497.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2025-12-23_131145_289.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/stitching-collage-1766466927090.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2025-12-23_131422_797.png">
 <meta property="article:published_time" content="2025-12-18T15:16:36.000Z">
-<meta property="article:modified_time" content="2026-01-16T15:48:15.033Z">
+<meta property="article:modified_time" content="2026-01-16T16:05:11.573Z">
 <meta property="article:author" content="Li Fengke">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2025-12-20_145534_886.png">
+<meta name="twitter:image" content="https://dkestxd.github.io/img/fanyingqi/ScreenShot_2025-12-20_145534_886.png">
   
   
   
@@ -216,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          720 字
+          705 字
         
       </span>
     
@@ -227,7 +228,7 @@
         
         
         
-          7 分钟
+          6 分钟
         
       </span>
     
@@ -273,10 +274,10 @@
 <span id="more"></span>
 
 <h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>考虑如题下图所示的过程，该过程通过A和B的反应制造产 品E。反应器出料包括E和其他一些未反应物（主要成分为原料A），简称为液体C；然后采 用分离器将E和C分开。液体C被送入精馏塔T-104，并从底部反馈至反应器。向反应器加入 的物料B的量取决于A的量以及C反馈至反应器中的回流量。对于新鲜进料A，要求物料B的 量满足给定比例为R1 &#x3D; B&#x2F;A；而对于回流进料C，要求物料B的量满足给定比例为R2 &#x3D; B&#x2F;C。 假设所有的流量计均为质量流量计。试设计一个控制方案，以控制进入反应器的总流量T， 并满足上述比值要求。</p>
-<p><img src="/img/chuangan/ScreenShot_2025-12-20_145534_886.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/ScreenShot_2025-12-20_145534_886.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="2-方案设计"><a href="#2-方案设计" class="headerlink" title="2 方案设计"></a>2 方案设计</h2><p>C的输入流量受一个流量-液位的串级系统控制，外置液位设定值是固定的。所以C液体的流量控制器已经做好。接下来只需要控制A和B的流量控制。</p>
 <p>B的流量受A和C的比例控制，$B&#x3D;A\times R_1+C\times R_2$，而对总流量的控制只能体现在对A的控制上。</p>
-<p><img src="/img/chuangan/ScreenShot_2026-01-03_175152_444.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/ScreenShot_2026-01-03_175152_444.png" srcset="/img/loading.gif" lazyload></p>
 <p>如图所示</p>
 <p>判断控制器正反作用：各个阀门应都为气开阀</p>
 <ul>
@@ -288,14 +289,14 @@
 <p>由于控制回路中E未参与闭环，故反应器中只涉及C，假设为$C(s)&#x3D;\frac{0.2}{s+1}A(s)+\frac{0.2}{s+1}B(s)+\frac{0.5}{s+1}C(s)$</p>
 <p>再在各个输出的地方加上饱和器防止输出为负，令R1&#x3D;3，R2&#x3D;2</p>
 <p>搭建起的控制回路如图</p>
-<p><img src="/img/chuangan/ScreenShot_2025-12-23_130519_497.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/ScreenShot_2025-12-23_130519_497.png" srcset="/img/loading.gif" lazyload></p>
 <p>初始值定义：F_A&#x3D;20,F_B&#x3D;60,F_C&#x3D;0,L_C&#x3D;0</p>
 <p>液位设定值Lsp为20，主流量Tsp设定值为先上升到240，再下降到230</p>
 <p>主流量响应为：</p>
-<p><img src="/img/chuangan/ScreenShot_2025-12-23_131145_289.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/ScreenShot_2025-12-23_131145_289.png" srcset="/img/loading.gif" lazyload></p>
 <p>A、B、C、液位为</p>
-<p>![stitching-collage-1766466927090](D:\新建文件夹 (5)\1\stitching-collage-1766466927090.jpg)</p>
-<p><img src="/img/chuangan/ScreenShot_2025-12-23_131422_797.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/stitching-collage-1766466927090.jpg" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/fanyingqi/ScreenShot_2025-12-23_131422_797.png" srcset="/img/loading.gif" lazyload></p>
 <p>以总流量为240的一段为例，这一段A&#x3D;30，C&#x3D;40，B&#x3D;170，满足B&#x3D;3A+2C与A+B+C&#x3D;240，同时也满足液位稳定在20</p>
 
                 

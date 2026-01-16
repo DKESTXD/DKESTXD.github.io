@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://dkestxd.github.io/img/dijie/ScreenShot_2025-11-21_172148_383.png">
 <meta property="article:published_time" content="2025-11-13T15:16:36.000Z">
-<meta property="article:modified_time" content="2026-01-16T15:14:20.211Z">
+<meta property="article:modified_time" content="2026-01-16T15:27:51.181Z">
 <meta property="article:author" content="Li Fengke">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://dkestxd.github.io/img/dijie/ScreenShot_2025-11-21_172148_383.png">
@@ -296,32 +296,106 @@
 <p><img src="/img/dijie/ScreenShot_2025-11-21_172148_383.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="3-子系统的决策变量和目标函数"><a href="#3-子系统的决策变量和目标函数" class="headerlink" title="3 子系统的决策变量和目标函数"></a>3 子系统的决策变量和目标函数</h2><p>原题可分解为三个子问题：整体编队轨迹<strong>跟踪参考轨迹</strong>、<strong>机器人等边三角形编队</strong>、<strong>避障</strong>。对应可以分为三个子系统：<strong>总运动轨迹子系统</strong>，<strong>机器人队形保持子系统</strong>，<strong>安全保持子系统</strong></p>
 <h4 id="3-1-总运动轨迹子系统"><a href="#3-1-总运动轨迹子系统" class="headerlink" title="3.1 总运动轨迹子系统"></a>3.1 总运动轨迹子系统</h4><p>因为题目中并未提到三个机器人要以怎样的角度和顺序构成等边三角形，于是此处默认为参考轨迹指的是机器人三角形质心的轨迹。</p>
-<p><strong>决策变量</strong>：三个机器人组成的三角形质心的坐标$$p_c=[x_c,y_c]$$ ，质心的速度$$v_c=[|v_c|,\theta_c]$$ </p>
+<p><strong>决策变量</strong>：三个机器人组成的三角形质心的坐标
+$$
+p_c=[x_c,y_c]
+$$
+，质心的速度
+$$
+v_c=[|v_c|,\theta_c]
+$$
+</p>
 <p><strong>目标函数</strong>：最小化实际轨迹与参考轨迹之间的误差，其中既有此时刻绝对位置与参考轨迹上位置的误差，也有此时刻运动方向与参考轨迹上此点的切线方向的误差。</p>
 
 $$
 J_1=||p_c-p_{ref}||^2+\lambda_1||\theta_c-\theta_{ref}||^2
 $$
 
-<p>假设初始状态都是0，速度与坐标有$$p_c(t)=\int^t_0v_c(t)dt$$ 的关系。</p>
-<h4 id="3-2-机器人队形保持子系统"><a href="#3-2-机器人队形保持子系统" class="headerlink" title="3.2 机器人队形保持子系统"></a>3.2 机器人队形保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标$$p_1,p_2,p_3$$ ，其中$$p_i=[x_i,y_i]$$ ；三个机器人各自的速度$$v_1,v_2,v_3$$ ，其中$$v_i=[|v_i|,\theta_i]$$ 。</p>
+<p>假设初始状态都是0，速度与坐标有
+$$
+p_c(t)=\int^t_0v_c(t)dt
+$$
+的关系。</p>
+<h4 id="3-2-机器人队形保持子系统"><a href="#3-2-机器人队形保持子系统" class="headerlink" title="3.2 机器人队形保持子系统"></a>3.2 机器人队形保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标
+$$
+p_1,p_2,p_3
+$$
+，其中
+$$
+p_i=[x_i,y_i]
+$$
+；三个机器人各自的速度
+$$
+v_1,v_2,v_3
+$$
+，其中
+$$
+v_i=[|v_i|,\theta_i]
+$$
+。</p>
 <p><strong>目标函数</strong>：使实际机器人之间的相对位姿尽可能接近等边三角形并且保持。接近三角形可用两两之间的相对距离为<strong>d&#x3D;0.5m</strong>，保持三角形可用两两机器人之间<strong>在位置连线上的分速度之差为0</strong> 。</p>
 
 $$
 J_2=\sum_{i,j}(||p_i-p_j||^2-d^2)^2+\lambda_2\sum_{i,j}E^2(v_i,v_j)
 $$
 
-<p>其中$$E(v_i,v_j)$$ 为i，j两个机器人在其连线方向上的速度分量之差。假设初始状态都是0，速度与坐标有$$p_i(t)=\int^t_0v_i(t)dt$$ 的关系。</p>
-<h4 id="3-3-安全保持子系统"><a href="#3-3-安全保持子系统" class="headerlink" title="3.3 安全保持子系统"></a>3.3 安全保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标$$p_1,p_2,p_3$$ ，其中$$p_i=[x_i,y_i]$$ ；三个机器人各自的速度$$v_1,v_2,v_3$$ ，其中$$v_i=[|v_i|,\theta_i]$$ 。</p>
+<p>其中
+$$
+E(v_i,v_j)
+$$
+为i，j两个机器人在其连线方向上的速度分量之差。假设初始状态都是0，速度与坐标有
+$$
+p_i(t)=\int^t_0v_i(t)dt
+$$
+的关系。</p>
+<h4 id="3-3-安全保持子系统"><a href="#3-3-安全保持子系统" class="headerlink" title="3.3 安全保持子系统"></a>3.3 安全保持子系统</h4><p><strong>决策变量</strong>：三个机器人各自的位置坐标
+$$
+p_1,p_2,p_3
+$$
+，其中
+$$
+p_i=[x_i,y_i]
+$$
+；三个机器人各自的速度
+$$
+v_1,v_2,v_3
+$$
+，其中
+$$
+v_i=[|v_i|,\theta_i]
+$$
+。</p>
 <p>对这个系统来说，用其监测整个系统的硬约束比建立一个目标函数的效果更好，如果建立目标函数，定义为三个机器人的位置坐标与已知障碍点的位置坐标之间的距离以及机器人之间的距离的加权和，并期望其越大越好，这可能会产生冲突，比如说已经有一个机器人与一个障碍物撞上了，但是整体上距离之和依然很大，没有起到保持安全的作用，或者决策函数用乘法，那么其距离关系更难以预测了，不如用硬约束来约束他们。</p>
-<p><strong>速度上限约束</strong>：$$|v_i|\leq v_{max}$$ </p>
-<p><strong>差动驱动约束</strong>：
-$$\dot{x}_i = v_i\cos\theta_i,\quad
- \dot{y}_i = v_i\sin\theta_i$$
+<p><strong>速度上限约束</strong>：
+$$
+|v_i|\leq v_{max}
+$$
 </p>
-<p><strong>环境避障约束</strong>：$$||p_i-o_j||\geq d_{safe1}$$ </p>
-<p><strong>机器人之间不碰撞约束</strong>：$$||p_i-p_j||\geq d_{safe2}$$ </p>
-<p><strong>系统关联</strong>：机器人组成的三角形的质心的坐标与三个机器人坐标之间的关系为$$p_c=\frac{1}{3}(p_1+p_2+p_3)$$ ，机器人组成的三角形的质心的速度与三个机器人的速度之间的关系为$$v_c=\frac{1}{3}(v_1+v_2+v_3)$$ (矢量和)</p>
+<p><strong>差动驱动约束</strong>：
+$$
+\dot{x}_i = v_i\cos\theta_i,\quad
+ \dot{y}_i = v_i\sin\theta_i
+$$
+</p>
+<p><strong>环境避障约束</strong>：
+$$
+||p_i-o_j||\geq d_{safe1}
+$$
+</p>
+<p><strong>机器人之间不碰撞约束</strong>：
+$$
+||p_i-p_j||\geq d_{safe2}
+$$
+</p>
+<p><strong>系统关联</strong>：机器人组成的三角形的质心的坐标与三个机器人坐标之间的关系为
+$$
+p_c=\frac{1}{3}(p_1+p_2+p_3)
+$$
+，机器人组成的三角形的质心的速度与三个机器人的速度之间的关系为
+$$
+v_c=\frac{1}{3}(v_1+v_2+v_3)
+$$
+(矢量和)</p>
 <p><strong>总体目标</strong>：整体误差最小，即 J1 与 J2 的加权和最小</p>
 
 $$
@@ -335,28 +409,137 @@ min J_{all}=\int^{t_0}_0J(t)dt
 $$
 
 
-
-<p><strong>协调参数</strong>：协调器需要处理关联变量$$p_c$$ 和$$p_i$$ ，$$v_c$$ 和$$v_i$$ </p>
-<p><strong>约束</strong>：$$|v_i|\leq v_{max}$$ 		
-$$\dot{x}_i = v_i\cos\theta_i,\quad
- \dot{y}_i = v_i\sin\theta_i$$
-		$$||p_i-o_j||\geq d_{safe1}$$ 		$$||p_i-p_j||\geq d_{safe2}$$ </p>
-<h2 id="4-协调策略设计"><a href="#4-协调策略设计" class="headerlink" title="4 协调策略设计"></a>4 协调策略设计</h2><p>我们计算总体目标误差时，是将三个机器人各自在整个过程中的速度函数$$v_i(t)$$ 代入 $$J_{all}$$ 公式中运算的，即对每个时刻的误差结果积分后的总结果进行评估。具体优化$$v_i(t)$$ 时，即优化其在某些时刻的值时，会用此时刻的总体误差最小来作为目标进行优化。</p>
+<p><strong>协调参数</strong>：协调器需要处理关联变量
+$$
+p_c
+$$
+和
+$$
+p_i
+$$
+，
+$$
+v_c
+$$
+和
+$$
+v_i
+$$
+</p>
+<p><strong>约束</strong>：
+$$
+|v_i|\leq v_{max}
+$$
+		
+$$
+\dot{x}_i = v_i\cos\theta_i,\quad
+ \dot{y}_i = v_i\sin\theta_i
+$$
+		
+$$
+||p_i-o_j||\geq d_{safe1}
+$$
+		
+$$
+||p_i-p_j||\geq d_{safe2}
+$$
+</p>
+<h2 id="4-协调策略设计"><a href="#4-协调策略设计" class="headerlink" title="4 协调策略设计"></a>4 协调策略设计</h2><p>我们计算总体目标误差时，是将三个机器人各自在整个过程中的速度函数
+$$
+v_i(t)
+$$
+代入<br>$$<br>J_{all}<br>$$<br>公式中运算的，即对每个时刻的误差结果积分后的总结果进行评估。具体优化
+$$
+v_i(t)
+$$
+时，即优化其在某些时刻的值时，会用此时刻的总体误差最小来作为目标进行优化。</p>
 <h4 id="4-1-关联预测协调原则（直接干预法）"><a href="#4-1-关联预测协调原则（直接干预法）" class="headerlink" title="4.1 关联预测协调原则（直接干预法）"></a>4.1 关联预测协调原则（直接干预法）</h4><ol>
-<li><strong>协调级预测关联</strong>：预测三个机器人整个运动过程中的速度函数为$$v_i^*$$ ，其运动轨迹为$$p_i^*(t)=\int^t_0v_i^*(t)dt$$ ；构成的三角形质心的速度函数为$$v_c^*=\frac{1}{3}(v_1^*+v_2^*+v_3^*)$$ ，轨迹函数为$$p_c^*=\frac{1}{3}(p_1^*+p_2^*+p_3^*)$$ </li>
-<li><strong>子系统决策</strong>：在约束$$v_i=v_i^*$$ 下，优化内部参数使得$$\int^{t_0}_0J_1dt$$ 最大，在约束$$v_c=v_c^*$$ 下，优化内部参数使得$$\int^{t_0}_0J_2dt$$ 最大</li>
-<li><strong>协调级修正关联</strong>：检查此时的总误差$$J_{all}$$ ，看是否达到预期，是否还能够下降；若还能下降，就微调$$v_i$$ ，注意要满足硬约束。</li>
+<li><strong>协调级预测关联</strong>：预测三个机器人整个运动过程中的速度函数为
+$$
+v_i^*
+$$
+，其运动轨迹为
+$$
+p_i^*(t)=\int^t_0v_i^*(t)dt
+$$
+；构成的三角形质心的速度函数为
+$$
+v_c^*=\frac{1}{3}(v_1^*+v_2^*+v_3^*)
+$$
+，轨迹函数为
+$$
+p_c^*=\frac{1}{3}(p_1^*+p_2^*+p_3^*)
+$$
+</li>
+<li><strong>子系统决策</strong>：在约束
+$$
+v_i=v_i^*
+$$
+下，优化内部参数使得
+$$
+\int^{t_0}_0J_1dt
+$$
+最大，在约束
+$$
+v_c=v_c^*
+$$
+下，优化内部参数使得
+$$
+\int^{t_0}_0J_2dt
+$$
+最大</li>
+<li><strong>协调级修正关联</strong>：检查此时的总误差
+$$
+J_{all}
+$$
+，看是否达到预期，是否还能够下降；若还能下降，就微调
+$$
+v_i
+$$
+，注意要满足硬约束。</li>
 <li><strong>迭代</strong>：重复步骤1-3，直到总误差不能再降。</li>
 </ol>
 <p>其中每一次迭代的解都是可行解，但是迭代过程太慢了，需要内部一次次根据局部误差最小进行优化。</p>
 <h4 id="4-2-关联平衡协调原则（目标协调法）"><a href="#4-2-关联平衡协调原则（目标协调法）" class="headerlink" title="4.2 关联平衡协调原则（目标协调法）"></a>4.2 关联平衡协调原则（目标协调法）</h4><ol>
-<li><strong>协调器引入干预变量</strong>：$$p_{\beta}$$ <ul>
-<li>总运动轨迹子系统新目标为$$J'_1=J_1+||p_c-p_{\beta}||^2$$ </li>
-<li>机器人队形保持子系统新目标为$$J'_2=J_2+\sum_{i=1}^3(||p_i-p_{\beta}||^2)$$ </li>
+<li><strong>协调器引入干预变量</strong>：
+$$
+p_{\beta}
+$$
+<ul>
+<li>总运动轨迹子系统新目标为
+$$
+J'_1=J_1+||p_c-p_{\beta}||^2
+$$
+</li>
+<li>机器人队形保持子系统新目标为
+$$
+J'_2=J_2+\sum_{i=1}^3(||p_i-p_{\beta}||^2)
+$$
+</li>
 </ul>
 </li>
-<li><strong>子系统决策</strong>：忽略约束的情况下，分别独立求解$$min J'_1$$ ，$$minJ'_2$$ ，得到最优$$p_c^*，p_i^*$$ </li>
-<li><strong>协调级修正子目标(平衡关联)</strong>：检查关联是否平衡：求$$e=||p_c^*-\frac{1}{3}(p_1^*+p_2^*+p_3^*)||^2$$ ，观察其是否为0，若不是0，调整$$p_{\beta}$$ 使得e尽量接近0</li>
+<li><strong>子系统决策</strong>：忽略约束的情况下，分别独立求解
+$$
+min J'_1
+$$
+，
+$$
+minJ'_2
+$$
+，得到最优
+$$
+p_c^*，p_i^*
+$$
+</li>
+<li><strong>协调级修正子目标(平衡关联)</strong>：检查关联是否平衡：求
+$$
+e=||p_c^*-\frac{1}{3}(p_1^*+p_2^*+p_3^*)||^2
+$$
+，观察其是否为0，若不是0，调整
+$$
+p_{\beta}
+$$
+使得e尽量接近0</li>
 <li><strong>迭代</strong>：重复步骤1-3，直到e趋于0</li>
 </ol>
 <p>子问题每次没有关联约束，都有解；但是迭代过程中的解都不满足关联约束说明其都不能作为真实解，只能离线规划，不能在线运行。</p>

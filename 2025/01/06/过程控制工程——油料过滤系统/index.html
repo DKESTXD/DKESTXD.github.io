@@ -26,14 +26,14 @@
 <meta property="og:site_name" content="DKEST">
 <meta property="og:description" content="很简单的超驰控制">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2026-01-03_190919_828.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/youliao/ScreenShot_2026-01-03_190919_828.png">
 <meta property="og:image" content="https://dkestxd.github.io/img/youliao/ScreenShot_2026-01-06_125312_749.png">
-<meta property="og:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2026-01-06_125841_850.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/youliao/ScreenShot_2026-01-06_125841_850.png">
 <meta property="article:published_time" content="2025-01-06T15:16:36.000Z">
-<meta property="article:modified_time" content="2026-01-16T16:03:20.901Z">
+<meta property="article:modified_time" content="2026-01-16T16:36:10.386Z">
 <meta property="article:author" content="Li Fengke">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://dkestxd.github.io/img/chuangan/ScreenShot_2026-01-03_190919_828.png">
+<meta name="twitter:image" content="https://dkestxd.github.io/img/youliao/ScreenShot_2026-01-03_190919_828.png">
   
   
   
@@ -271,7 +271,7 @@
 <span id="more"></span>
 
 <h2 id="1-问题描述"><a href="#1-问题描述" class="headerlink" title="1 问题描述"></a>1 问题描述</h2><p>某一油料过滤系统如下图所示。待过滤油料首先进入一总管，为安全起见，总管压力通过调节进油阀门得到有效控制。总管中的油料随后被分配到四个过滤器。 类似于热交换器，过滤器也由外壳与内部导管组成，其中内部导管的上端面封闭，下端面开放；而外壳的上端面开放，下端面封闭。内部导管管壁为过滤网，待过滤油料先进入壳程， 其中液体经过滤网过滤后进入内部导管，再内部导管流出。随着时间的推移，过滤网上将不断产生胶质。为使油料中的液体通过，需要逐步提高壳程压力。但如果压力提高过大，则过滤器墙壁就会崩塌。因此，当达到某一临界值时，过滤器就需要被取下进行清理。在正常情况下，3个过滤器就可以处理所有的油料。<br> a)  设计一套控制系统，以维持通过系统的总油量不变。<br> b) 完善补充上述控制系统，以满足：（1）如果进入某一个过滤器的油料压力超过一个事先 设定值，那么就开始减少进入此过滤器油量；（2）一旦某一过滤器进料阀门达到 10% 的开度，联锁系统就会自动关闭此过滤器，等待清理。与此同时，通过系统的总油量要 保持不变。</p>
-<p><img src="/img/chuangan/ScreenShot_2026-01-03_190919_828.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/youliao/ScreenShot_2026-01-03_190919_828.png" srcset="/img/loading.gif" lazyload></p>
 <h2 id="2-控制方案设计"><a href="#2-控制方案设计" class="headerlink" title="2 控制方案设计"></a>2 控制方案设计</h2><h3 id="2-1-维持通过系统总油量"><a href="#2-1-维持通过系统总油量" class="headerlink" title="2.1 维持通过系统总油量"></a>2.1 维持通过系统总油量</h3><p>控制目标是维持<strong>通过系统的总油量</strong>在设定值，实际上就是<strong>控制输出总管道</strong>过滤后的油量不变，这<strong>通过控制输入的总阀门来实现</strong></p>
 <p>本题目情况下<strong>不适合同时控制四个过滤罐的分阀门</strong>，因为只有一个输出量，但是有四个相同情况的执行机构。如果控制的话，统一控制则会因为四个过滤罐残留胶质情况不同而导致控制效果不佳，如果分开各自乘比例控制，其运算过程又过于复杂。所以应该让四个分阀门各定在某一开度，然后控制主阀门主流量，在运行过程中，主流量会实时根据四个罐的实际情况来分配油量，这部分是不需要干预的。</p>
 <p>如果控制主阀门的话，主阀门同时受总油量和总管压力的控制，会产生耦合。但是这两者中的<strong>总管压力控制是出于安全角度考虑的，只要保证压力不超过限定值即可</strong>，因此可以设计为<strong>超驰控制系统</strong></p>
@@ -289,7 +289,7 @@
 <p>每个压力控制器和PC10一样，都是<strong>反作用</strong></p>
 <p>因为出于安全考虑，流量越小越安全，选择器为<strong>LS(低选器)</strong></p>
 <p>硬保护部分由一个<strong>逻辑判断</strong>模块实现，判断其输入的阀门开度是否小于10%，如果是，之间输出0%让阀门关闭；如果否，直接输出其输入值</p>
-<p><img src="/img/chuangan/ScreenShot_2026-01-06_125841_850.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/youliao/ScreenShot_2026-01-06_125841_850.png" srcset="/img/loading.gif" lazyload></p>
 <p>其中每台的初始手动设定阀门开度u0，可由<strong>理论值计算</strong>或者<strong>实验能够满足输出总流量设定值并且保留一定操作空间</strong>来获得</p>
 <p><strong>控制过程</strong>：<br>• 起初，四台过滤器都是最佳状态，输出总流量控制器控制主阀门，此时PC10输出还很大，受FC15控制，稳定时输入总阀门的开度适应分阀门的手动开度来满足输出达到设定值；对每个分阀门来说，其实压力远低于最大值Pmax，压力控制器输出很大，整体分阀门开度按照手动预设值<br>• 控制途中，由于胶质残留，为保证输出流量，输入流量增大，通过增加压力的方法来保证输出流量，此时过滤罐壳程压力变大，使压力控制器输出逐渐变小，但是此时还未超过预设阀门开度，输出流量仍然能达到预设值<br>• 随着胶质增多，壳程压力持续上升，最终压力控制器输出小于预设阀门开度，使对应的过滤罐阀门开度变小，此时主流量控制器仍然可以通过加流量的方式来使输出流量维持在设定值<br>• 之后某个过滤罐的压力控制器输出小于10%，导致触发硬保护，过滤罐完全关闭阀门，但是因为题目中给出三个过滤罐就可以处理所有的油料，因此此时主流量控制器仍然可以使输出流量达到设定值<br>• 随着其他罐子残留胶质增多，总管压力越来越大，最终控制器输出值小于流量控制器输出，导致阀门开度减小，此时才超出了控制的可行域，输出总流量不能达到设定值</p>
 

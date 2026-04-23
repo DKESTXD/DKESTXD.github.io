@@ -293,7 +293,7 @@
     <link href="/2025/05/10/%E8%B7%A8%E4%B8%93%E4%B8%9A%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     <url>/2025/05/10/%E8%B7%A8%E4%B8%93%E4%B8%9A%E4%B9%8B%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
     
-    <content type="html"><![CDATA[<p>选跨专业为了挑战自己选了数院的神经网络，不出所料上课是听不懂的，而且每周上课人数个位数，不过通过这个课第一次接触到了latex，当时还不会用模板，都是手写的。共有三个作业：MLP，ResNext和DesNet，题目三选一，记得三选一里面有个用九章算术训练语言模型来解题的，当时试了半天，后来发现怎么可能实现呢，数据量那么少，总共一千来行句子，还是文言文，现在应该是可实现的，弄个知识库，让大模型学习一下。总之最后选的GAN对抗生成网络</p><span id="more"></span><p>MLP：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告一：手搓MLP.pdf"  width="100%"   height="600"></iframe><p>ResNext和DesNet：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告二：利用深度学习框架对比微调和从头训练%20.pdf"  width="100%"   height="600"></iframe><p>GAN：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告三：基于对抗生成网络生成图片.pdf"  width="100%"   height="600"></iframe>]]></content>
+    <content type="html"><![CDATA[<p>MLP，ResNext和DesNet，GAN</p><span id="more"></span><p>选跨专业为了挑战自己选了数院的神经网络，不出所料上课是听不懂的，而且每周上课人数个位数，不过通过这个课第一次接触到了latex，当时还不会用模板，都是手写的。共有三个作业：MLP，ResNext和DesNet，题目三选一，记得三选一里面有个用九章算术训练语言模型来解题的，当时试了半天，后来发现怎么可能实现呢，数据量那么少，总共一千来行句子，还是文言文，现在应该是可实现的，弄个知识库，让大模型学习一下。总之最后选的GAN对抗生成网络</p><p>MLP：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告一：手搓MLP.pdf"  width="100%"   height="600"></iframe><p>ResNext和DesNet：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告二：利用深度学习框架对比微调和从头训练%20.pdf"  width="100%"   height="600"></iframe><p>GAN：</p><iframe  src="https://dkestxd.github.io/img/kuazhuanye/报告三：基于对抗生成网络生成图片.pdf"  width="100%"   height="600"></iframe>]]></content>
     
     
     <categories>
@@ -331,7 +331,7 @@
     <link href="/2025/04/09/%E5%A6%82%E4%BD%95%E7%94%A8%E5%88%BB%E6%84%8F%E7%9A%84%E7%AE%97%E6%B3%95%E7%BB%95%E8%BF%9C%E8%B7%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%8C%96%E5%AD%A6%E5%BC%8F%E8%87%AA%E5%8A%A8%E9%85%8D%E5%B9%B3%E5%99%A8/"/>
     <url>/2025/04/09/%E5%A6%82%E4%BD%95%E7%94%A8%E5%88%BB%E6%84%8F%E7%9A%84%E7%AE%97%E6%B3%95%E7%BB%95%E8%BF%9C%E8%B7%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%8C%96%E5%AD%A6%E5%BC%8F%E8%87%AA%E5%8A%A8%E9%85%8D%E5%B9%B3%E5%99%A8/</url>
     
-    <content type="html"><![CDATA[<p>施工中。。。细节可见<a href="https://github.com/DKESTXD/my-university-life">DKESTXD&#x2F;my-university-life</a></p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>数值计算大作业，翻车了…</p><span id="more"></span><iframe  src="https://dkestxd.github.io/img/szjsdazuoye/3230105182-李丰克-数值计算方法大作业.pdf"  width="100%"   height="600"></iframe>]]></content>
     
     
     <categories>
@@ -350,7 +350,7 @@
     <link href="/2025/04/08/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <url>/2025/04/08/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     
-    <content type="html"><![CDATA[<p>施工中。。。细节可见<a href="https://github.com/DKESTXD/my-university-life">DKESTXD&#x2F;my-university-life</a></p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>学的最认真的一门课之一</p><span id="more"></span><iframe  src="https://dkestxd.github.io/img/shuzhijisuan/matlab.pdf"  width="100%"   height="600"></iframe>]]></content>
     
     
     <categories>

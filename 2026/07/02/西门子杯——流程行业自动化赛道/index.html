@@ -1,0 +1,906 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.jpg">
+  <link rel="icon" href="/img/fluid.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Li Fengke">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="2026年西门子杯流程赛道，我是队长，最后84.6省一，但是校内第三，前二进决赛正好差一步。赛项内容主要是用PCS7搭建CFC与SFC以控制一个蒸汽生产系统(大锅炉)，最后在工控机上跑分，属于是过控的实践延申。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="西门子杯——流程行业自动化赛道">
+<meta property="og:url" content="https://dkestxd.github.io/2026/07/02/%E8%A5%BF%E9%97%A8%E5%AD%90%E6%9D%AF%E2%80%94%E2%80%94%E6%B5%81%E7%A8%8B%E8%A1%8C%E4%B8%9A%E8%87%AA%E5%8A%A8%E5%8C%96%E8%B5%9B%E9%81%93/index.html">
+<meta property="og:site_name" content="DKEST">
+<meta property="og:description" content="2026年西门子杯流程赛道，我是队长，最后84.6省一，但是校内第三，前二进决赛正好差一步。赛项内容主要是用PCS7搭建CFC与SFC以控制一个蒸汽生产系统(大锅炉)，最后在工控机上跑分，属于是过控的实践延申。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/1.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/2.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/3.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/4.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/5.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/6.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/9.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/7.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/8.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/10.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/11.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260421135905_217_57.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_122321_465.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_124412_535.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_124558_831.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_124800_746.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_124948_363.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_141346_022.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/ScreenShot_2026-08-29_144354_675.png">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/result20.jpeg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260829150921_518_57.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260829150922_519_57.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260829151041_520_57.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260829151102_521_57.jpg">
+<meta property="og:image" content="https://dkestxd.github.io/img/ximenzi/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260829155259_523_57.jpg">
+<meta property="article:published_time" content="2026-07-02T03:48:54.000Z">
+<meta property="article:modified_time" content="2026-10-09T11:15:31.292Z">
+<meta property="article:author" content="Li Fengke">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dkestxd.github.io/img/ximenzi/1.jpg">
+  
+  
+  
+  <title>西门子杯——流程行业自动化赛道 - DKEST</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dkestxd.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DKEST</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="西门子杯——流程行业自动化赛道"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-07-02 11:48" pubdate>
+          2026年7月2日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">西门子杯——流程行业自动化赛道</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>2026年西门子杯流程赛道，我是队长，最后84.6省一，但是校内第三，前二进决赛正好差一步。赛项内容主要是用PCS7搭建CFC与SFC以控制一个蒸汽生产系统(大锅炉)，最后在工控机上跑分，属于是过控的实践延申。</p>
+<span id="more"></span>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;参加这个比赛其实是大二暑假短学期课程自动化竞赛实训的要求，随大流打的西门子杯，看流程赛道比较冷门而且刚好学过过控，所以选了它。整个大三上只开展了几次培训，主要是配置虚拟机网络、学习PCS7硬件组态、CFC原理、SFC原理，以及过往赛题分析。但是最后那节课我请假了，这就埋下了伏笔。</p>
+<p>&emsp;&emsp;最后一节课正好讲了赛题相关的事情，但是我不知道，大三下要求我们自行搭建程序，然后跑2024年的题目，但是彼时我甚至都不知道赛题是什么，或者说我都不知道整个被控对象是什么，正好25年有个人赛环节，我恰好有个人赛的题目，仅仅是一个水位控制，我当时还在想，这么简单还需要上SFC吗(不要问我队友，我队友都很不靠谱，我独自干了80%的活)，于是前半个学期一直摆了。直到一次我去调程序，恰好遇到25年打比赛的学长在值班，这时我才得知，原来赛题的被控对象是这么复杂的一个系统，我甚至真题都是向学长要的。</p>
+<p>&emsp;&emsp;于是时间一下子紧张起来，当时是四月末，我首先给每个被控变量设计了控制回路，主要也就五六个，然后搭建了对应的CFC。五月一当天，我去研究搭建SFC，当时脑子里完全没有SFC这个概念，也不知道要按着评分标准中的操作要求来搭建，胡乱搞了一通，最后败给了一个只进水不出水的汽包水位控制(这里完全是顺序错了，应该汽包输出蒸汽后再投自动)，心灰意冷，后面几天复习机建去了。</p>
+<p>&emsp;&emsp;后来就是做计控实践了，又是两周，恰好在计控验收的那一天，指导老师突然要中期检查，这个时候的正常进度应该是程序能够跑分了，在优化过程。但是我们组完全就是0进度，当时老师都直接劝退了，说进度太落后了，要考虑是否还要参加比赛。真的是最绝望的几天了，又是计控又是竞赛还有个srtp，所有的事情都在一瞬间压过来了。当时还想打比赛不就为了保研加分吗，我兴许不差这零点几分呢。</p>
+<p>&emsp;&emsp;后来还是咬咬牙坚持了，毕竟还有一个多月呢。然后后面每周都挑两三个下午去调程序。但是其实没有那么难，当理解了整个流程和原理的时候，按照操作要求搭好SFC调好PID后，尝试运行，发现效果没有那么差。当时还跑了一下分，竟然就有45分了。</p>
+<img src="/img/ximenzi/1.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<img src="/img/ximenzi/2.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;后来优化PID减小震荡，添加停车过程，最后跑完分也有55分了。</p>
+<img src="/img/ximenzi/3.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<img src="/img/ximenzi/4.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;6.2号，当时尝试更新了一下出口压力的控制方案，结果发现曲线会周期性跳变一下，体现在曲线上就是一根一根刺，这是之前从来未有的bug，而且不可能是PID参数导致的，后面我把所有涉及到的变量拉出来，运行的时候紧盯着，最后锁定在燃料阀门上，它会突然跳变到100%，然后再瞬间回到应该的值。这就会导致燃料流量跳变一下，从而牵引出口压力、温度、废气氧量等随之震荡。紧接着排查了所有导致这个bug的原因，结果居然是CFC当了叛徒，当时我为了实验新的方案，就新建了一个出口压力控制的CFC，原来的CFC方案没有删掉，这就导致了从工控机的角度看，燃油阀门变量同时有两个输入，一个是被SFC调用的应该的值，另一个是CFC上未被调用的默认值100，我本以为如果SFC不调用CFC，那么它就不会参与变量的输入，结果我错了，能解决这么刁钻的bug也是神了。</p>
+<img src="/img/ximenzi/5.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;6.6，又迎来了新的挑战，当出口流量提升负荷时，出口压力会掉下来，且很缓慢回升回去，但是是有时间限制的，出现这种情况首先想到积分和比例作用太弱了，不能够及时补充上燃料，于是加强积分和比例，结果震荡了。当时分析了一通，发现如果PI过弱不能及时拉上去，PI过强又会等幅震荡，完全矛盾的，陷入了僵局。</p>
+<img src="/img/ximenzi/6.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<img src="/img/ximenzi/9.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;但是如果不搞加负荷的话，结果又挺好的，能跑83分，但是这不是自欺欺人吗。</p>
+<img src="/img/ximenzi/7.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<img src="/img/ximenzi/8.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;后面就忙着考试周了，考试周结束到正式比赛期间，还有四次调试机会。</p>
+<p>&emsp;&emsp;7.14，我再次尝试把出口压力方案改为前馈，结果成功了，无论提升多少负荷，出口压力都不会剧烈震荡了。</p>
+<img src="/img/ximenzi/10.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;后面根据比赛时的设备清单重新组态了一份程序，再把我的程序迁移过去，静等比赛日了。</p>
+<p>&emsp;&emsp;7.17可以进比赛现场调试设备，主要是为了两方面，一方面是测试硬件组态对不对，SFC能不能正常下发操纵，第二个是测阀门特性与燃烧特性这些和在学校里是否一致，这些关乎了前期升压的一些参数以及前馈参数。所幸都很顺利。</p>
+<p>&emsp;&emsp;7.19晚，我们是最后一批，三个小时时间，至少留半小时时间完成跑一次分，最多跑两次。刚拿到题目，除了操作步骤多了些吹扫炉膛这些操作外，最吓人的是出口流量竟然要开到30，我之前一直都是10开始的(其实现在想想完全可以10开始再升负荷到30，毕竟算分是从30分钟处逆推6分钟取曲线的，当时紧张了没想到)，这意味着整个前期升压的燃料与空气量都得调，但是试错成本特别高。第一次发现投自动后温度上不去，第二次调高了旁路阀发现温度还是上不去，第三次发现原来是温度那个变量在CFC中的量程变了，这就导致机器接收到的设定值与你看到的设定值不一样，按照量程差距成比例关系，气笑了。第四次及后面若干次都在调升压燃料，最后只剩一小时了，最后调的一次，温度对了。但是压力却下不来了，我当时就想完蛋了，前馈系数错了，但是想办法的时候发现压力下来了，只是下来的慢而已，我估计了一下大概能稳定，当时离结束还有35分钟，不得不跑分了，这个时候心里还是没底，完全孤注一掷了。但是好在结果是好的，就看着压力一点点的下降，最后稳定在3800KPa，持续了十几分钟的稳定。虽然也献祭了炉膛压力和废气氧量的安全分，但是意外的拿满了收益分，最后84.6拿下省一，差一步进决赛。</p>
+<img src="/img/ximenzi/11.jpg" srcset="/img/loading.gif" lazyload style="zoom: 50%;" />
+
+<p>&emsp;&emsp;后面保研时申请加分的时候也给我气笑了，当时以为省一0.2，省二0.06，省三0.04，但是没发现下面有行小字：如果比赛存在特等奖，加分顺延(就是省特0.2，省一0.06)；如果比赛仅学院认定非学校认定，加分折半。这样我本来以为加0.2分的，结果只能加0.03了，气笑了，不过最后还是有保研名额的，看来我真的不靠加分也能拿到名额。不过这个比赛经历也让我复试的时候有很多东西可说。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>源文件就不放了，整个的思路都在下面了。</p>
+<h3 id="1-赛题简介"><a href="#1-赛题简介" class="headerlink" title="1 赛题简介"></a>1 赛题简介</h3><p>​	赛题为用PCS7软件自行设计控制回路来控制一个蒸汽生产系统，使产生的蒸汽流量、压力、温度、汽包水位、废气含氧量、炉膛压力等指标稳定在要求的区间内。工控机程序自动评分，分为开车步骤分与控制工况分，最终得分84.6分。</p>
+<img src="/img/ximenzi/微信图片_20260421135905_217_57.png" srcset="/img/loading.gif" lazyload alt="微信图片_20260421135905_217_57"  />
+
+<h3 id="2-工作内容"><a href="#2-工作内容" class="headerlink" title="2 工作内容"></a>2 工作内容</h3><h4 id="2-1-硬件组态"><a href="#2-1-硬件组态" class="headerlink" title="2.1 硬件组态"></a>2.1 硬件组态</h4><p>校内的工控机与比赛时的工控机的PLC CPU、电源型号不同，需重新硬件组态：</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>订货号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RACK支架</td>
+<td>6ES7 400-1JA11-0AA0</td>
+</tr>
+<tr>
+<td>PS电源</td>
+<td>6ES7 407-0KA02-0AA0</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>6ES7412-3HJ14-0AB0</td>
+</tr>
+<tr>
+<td>CP通讯</td>
+<td>6GK7443-1EX20-0XE0</td>
+</tr>
+</tbody></table>
+<img src="/img/ximenzi/ScreenShot_2026-08-29_122321_465.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_122321_465" style="zoom: 67%;" />
+
+<h4 id="2-2-控制回路设计与CFC搭建"><a href="#2-2-控制回路设计与CFC搭建" class="headerlink" title="2.2 控制回路设计与CFC搭建"></a>2.2 控制回路设计与CFC搭建</h4><h5 id="2-2-1-汽包水位控制"><a href="#2-2-1-汽包水位控制" class="headerlink" title="2.2.1 汽包水位控制"></a>2.2.1 汽包水位控制</h5><p>汽包水位LI1102控制：单回路控制，MV为进水阀门FV1101</p>
+<img src="/img/ximenzi/ScreenShot_2026-08-29_124412_535.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_124412_535"  />
+
+<h5 id="2-2-2-蒸汽流量控制"><a href="#2-2-2-蒸汽流量控制" class="headerlink" title="2.2.2 蒸汽流量控制"></a>2.2.2 蒸汽流量控制</h5><p>蒸汽流量FI1105控制：单回路控制，MV为出口阀门FV1105</p>
+<p><img src="/img/ximenzi/ScreenShot_2026-08-29_124558_831.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_124558_831"></p>
+<h5 id="2-2-3-蒸汽温度控制"><a href="#2-2-3-蒸汽温度控制" class="headerlink" title="2.2.3 蒸汽温度控制"></a>2.2.3 蒸汽温度控制</h5><p>蒸汽温度TI1104控制：分程控制，MV为FV1102与FV1103，两者阀门开度和为166%，控制器反作用。</p>
+<p><img src="/img/ximenzi/ScreenShot_2026-08-29_124800_746.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_124800_746"></p>
+<h5 id="2-2-4-蒸汽压力控制"><a href="#2-2-4-蒸汽压力控制" class="headerlink" title="2.2.4 蒸汽压力控制"></a>2.2.4 蒸汽压力控制</h5><p>蒸汽压力PI1104控制：前馈控制+串级控制，MV为燃料阀门FV1104</p>
+<p><strong>串级控制</strong>内回路以燃料流量FI1103为PV，控制输出为燃料阀门FV1104开度。外回路以PI1104为PV，控制输出作为燃料流量设定值；</p>
+<p><strong>前馈控制</strong>：</p>
+<p>拟合燃料阀门特性：近似拟合为线性：FI1103&#x3D; FV104 × 0.0524 + 0.0514 <strong>OR</strong> FV1104&#x3D;FI1103 × 19.0840 - 0.981</p>
+<table>
+<thead>
+<tr>
+<th>阀门开度 &#x2F; %</th>
+<th>燃料流量 &#x2F; kg&#x2F;s</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>40</td>
+<td>2.15</td>
+</tr>
+<tr>
+<td>45</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td>48</td>
+<td>2.57</td>
+</tr>
+</tbody></table>
+<p>拟合燃烧特性，即维持蒸汽压力在3800KPa，不同蒸汽流量所需的燃料流量：近似拟合为线性：FI1103&#x3D;FI1105 × 0.1322 - 0.04</p>
+<table>
+<thead>
+<tr>
+<th>蒸汽流量 &#x2F; kg&#x2F;s</th>
+<th>燃料流量 &#x2F; kg&#x2F;s</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>17.93</td>
+<td>2.41</td>
+</tr>
+<tr>
+<td>21.94</td>
+<td>2.94</td>
+</tr>
+<tr>
+<td>9.848</td>
+<td>1.43</td>
+</tr>
+</tbody></table>
+<p>计算可得由蒸汽得到燃料阀门开度的前馈公式：FV1104&#x3D;FI1105 × 2.5229 - 1.74436</p>
+<p>FV1104的控制值分为前馈计算值+串级控制值微调</p>
+<p><img src="/img/ximenzi/ScreenShot_2026-08-29_124948_363.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_124948_363"></p>
+<h5 id="2-2-5-废气氧量控制"><a href="#2-2-5-废气氧量控制" class="headerlink" title="2.2.5 废气氧量控制"></a>2.2.5 废气氧量控制</h5><p>废气氧量AI1101控制：前馈控制+单回路控制，MV为风扇功率S1101</p>
+<p>前馈控制：风扇功率与空气流量之间经测量大概是1：1的关系，FV1104&#x3D;S1101</p>
+<p>测量当所有指标趋于稳定时，维持废气氧量在2%左右所需的空气流量</p>
+<table>
+<thead>
+<tr>
+<th>燃料流量</th>
+<th>空气流量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.24</td>
+<td>42.00</td>
+</tr>
+<tr>
+<td>2.42</td>
+<td>31.31</td>
+</tr>
+</tbody></table>
+<p>得到若维持出口氧量在2%，应满足FI1104&#x3D;13.0366×FI1103-0.2385 <strong>OR</strong> S1101&#x3D;13.0366×FI1103-0.2385</p>
+<p>单回路的PV为FI1104，MV为S1101，将上述计算值作为单回路的设定值得到控制值微调。</p>
+<p><img src="/img/ximenzi/ScreenShot_2026-08-29_141346_022.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_141346_022"></p>
+<h5 id="2-2-6-炉膛内压力"><a href="#2-2-6-炉膛内压力" class="headerlink" title="2.2.6 炉膛内压力"></a>2.2.6 炉膛内压力</h5><p>炉膛内压力PI1102，炉膛内压力只有20-120mmH2O的安全要求，并无稳态需求，因此经测量只要将烟道挡板DO1101设定为35%即可满足安全需求。</p>
+<h5 id="2-2-7-PID整定"><a href="#2-2-7-PID整定" class="headerlink" title="2.2.7 PID整定"></a>2.2.7 PID整定</h5><p>所有设计到的控制器的PID整定结果如下</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>P</th>
+<th>Ti&#x2F;s</th>
+<th>Td&#x2F;s</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>水位回路</td>
+<td>4.5</td>
+<td>40</td>
+<td>5</td>
+</tr>
+<tr>
+<td>温度回路</td>
+<td>1.5</td>
+<td>30</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>压力外环</td>
+<td>1.2</td>
+<td>80</td>
+<td>0</td>
+</tr>
+<tr>
+<td>压力内环</td>
+<td>1.3</td>
+<td>80</td>
+<td>0</td>
+</tr>
+<tr>
+<td>风扇回路</td>
+<td>0.7</td>
+<td>30</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>流量回路</td>
+<td>1.3</td>
+<td>40</td>
+<td>0.5</td>
+</tr>
+</tbody></table>
+<h5 id="2-2-8-存放所有开关量的CFC"><a href="#2-2-8-存放所有开关量的CFC" class="headerlink" title="2.2.8 存放所有开关量的CFC"></a>2.2.8 存放所有开关量的CFC</h5><p><img src="/img/ximenzi/ScreenShot_2026-08-29_144354_675.png" srcset="/img/loading.gif" lazyload alt="ScreenShot_2026-08-29_144354_675"></p>
+<h4 id="2-3-SFC搭建"><a href="#2-3-SFC搭建" class="headerlink" title="2.3 SFC搭建"></a>2.3 SFC搭建</h4><p>SFC是自动开车程序，主要是按照赛题评分细则来设计开车步骤</p>
+<p>SFC各个步的操作方式主要就是给同目录下的CFC中的各个值赋值，以实现开关、手动设定值、手自动切换等功能。</p>
+<p>SFC步骤按照赛题来大致可总结为：汽包上水→炉膛吹扫→点火升温→升压至1200KPa→开出口旁路阀→汽包水位回路切自动→温度回路切自动→继续升压至3680KPa→压力回路切自动→出口流量手动启动→风扇回路切自动→出口流量回路切自动</p>
+<p><img src="/img/ximenzi/result20.jpeg" srcset="/img/loading.gif" lazyload alt="result20"></p>
+<p>其中在升压过程中燃料与空气配比较为重要，因为在不同升压区间对燃料的需求也会变化，而且不同燃空比燃烧效率不同导致压力上升速度也不同，既不能使升压速度超过要求的值，也要时刻保证压力上升，同时也要保证氧量(我们的策略是升压阶段氧量都要大于3%，全部切为自动后再要求回到1%-3%，因为这部分的判定是首次进入要求区间后不能再出去)，并且在切自动的最后阶段燃料的量要尽量接近稳定运行时的燃料流量，我们配比如下(并非完美配比)：</p>
+<p>另外由于流量设定值为30，在出口阀门打开前出口旁路阀HV1102担任了流量出口的角色，各个回路的稳定都是基于HV1102的输出流量的基础上的，因此在先前调节的过程中就要将旁路阀的输出流量尽可能接近30，防止出口阀门切换时发生跳变。</p>
+<table>
+<thead>
+<tr>
+<th>过程</th>
+<th>燃料开度</th>
+<th>鼓风机开度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>起始汽包升压(到1200KPa)</td>
+<td>50</td>
+<td>49</td>
+</tr>
+<tr>
+<td>出口压力第一次升压(到2800KPa)</td>
+<td>60</td>
+<td>58</td>
+</tr>
+<tr>
+<td>出口压力第二次升压(到3500KPa)</td>
+<td>60</td>
+<td>57</td>
+</tr>
+<tr>
+<td>出口压力第三次升压(到3680KPa)</td>
+<td>65</td>
+<td>62</td>
+</tr>
+</tbody></table>
+<h4 id="2-4-正常运行结果"><a href="#2-4-正常运行结果" class="headerlink" title="2.4 正常运行结果"></a>2.4 正常运行结果</h4><img src="/img/ximenzi/微信图片_20260829150921_518_57.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20260829150921_518_57" style="zoom:50%;" />
+
+<img src="/img/ximenzi/微信图片_20260829150922_519_57.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20260829150922_519_57" style="zoom:50%;" />
+
+<h3 id="3-遇到的问题"><a href="#3-遇到的问题" class="headerlink" title="3 遇到的问题"></a>3 遇到的问题</h3><h4 id="3-1-周期扰动"><a href="#3-1-周期扰动" class="headerlink" title="3.1 周期扰动"></a>3.1 周期扰动</h4><p>在前期实验时，时常会出现图中这样周期性的扰动，这种不是由PID没调好引起的，经观察发现是燃料阀门会周期性跳变至100%然后再瞬间回到正常值，这一次采样时间的跳变会导致燃料值骤升，从而产生了扰动。</p>
+<p>最后经排查，造成此问题的原因是：前期为了用不同控制方案控制压力，搭建了两个CFC在同一目录下，两个CFC中都存在关联燃料阀门的块，但是将程序下载进cpu后，两个CFC同时赋值，其中一个受SFC调用输出燃料阀门正常值，另一个CFC虽未被调用，但是其在CFC中默认对燃料阀门有100%的初始值。这样对工控机来说，<strong>一个变量同时接收了两个输入</strong>，虽然大部分时间接收的是正常值，但是在某些采样时间上会接收100%那个值导致周期性的扰动</p>
+<img src="/img/ximenzi/微信图片_20260829151041_520_57.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20260829151041_520_57" style="zoom: 50%;" />
+
+<h4 id="3-2-提升负荷时压力骤降"><a href="#3-2-提升负荷时压力骤降" class="headerlink" title="3.2 提升负荷时压力骤降"></a>3.2 提升负荷时压力骤降</h4><p>前期时压力回路的控制方案并没有前馈，而是只有串级控制。提升负荷时，蒸汽流量出现一个大的跳变，相当于给压力回路带来了一个大的扰动，这时如果想要及时将压力拉回正常值，内外环都需要较大的P值和积分作用，但是当P值较大时压力又不能稳定在一个值，而是保持周期振荡，只有较小的P值才能稳定。两个要求是矛盾的，无论如何调PID值都无法满足要求。</p>
+<p>随后想到了尝试分段式PID，即在扰动初期先用大的P将压力值拉回正常范围，随后切回小的P使其微调稳定，但是不仅PID切换的时机难以计算，且提升不同的负荷的切换时机也不同，并且实践下来压力并没有像预期的那样迅速拉回再慢慢稳定，其还是会大幅震荡几个周期后再稳定。</p>
+<p>后面发现了保证压力稳定在3800KPa的前提下，不同蒸汽输出流量与维持其压力所需的燃料流量之间存在着某种关系，随后测量拟合并得到了前馈公式，将控制方案改为前馈控制+串级控制微调后，解决了此问题。</p>
+<img src="/img/ximenzi/微信图片_20260829151102_521_57.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20260829151102_521_57" style="zoom:50%;" />
+
+<img src="/img/ximenzi/微信图片_20260829155259_523_57.jpg" srcset="/img/loading.gif" lazyload alt="微信图片_20260829155259_523_57" style="zoom: 50%;" />
+
+
+
+
+
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7/" class="category-chain-item">其他工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>西门子杯——流程行业自动化赛道</div>
+      <div>https://dkestxd.github.io/2026/07/02/西门子杯——流程行业自动化赛道/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Li Fengke</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年7月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/07/02/%E6%9C%80%E4%BC%98%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" title="最优控制与强化学习">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">最优控制与强化学习</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" title="计算机控制系统">
+                        <span class="hidden-mobile">计算机控制系统</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
